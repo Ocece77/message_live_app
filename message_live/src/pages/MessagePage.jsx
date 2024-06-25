@@ -24,42 +24,42 @@ const MessagePage =()=>{
 
   const [messages , setMessages] = useState([])
 
-  const handleSubmit= async (e)=>{
-      e.preventDefault();
-      try{
-        const res = await fetch('https://message-live-app.onrender.com/api/message/post', {
-          method : 'POST',
-          headers : {'Content-Type'  : 'application/json' },
-          body : JSON.stringify(formData)
-        });
-        if (!res.ok){
-          console.error('Error in the creation of the message')
-        } else {
-          console.log('message created')
-        }
-      } catch(err){
-        console.log(err)
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch('/api/message/post', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) {
+        console.error('Error in the creation of the message');
+      } else {
+        console.log('Message created');
+        fetchMessages();
       }
+    } catch (err) {
+      console.log(err);
     }
+  };
 
-  useEffect(()=>{
-
-      try {
-        fetch('https://message-live-app.onrender.com/api/message/get')
-        .then(response => {
-          if (!response.ok){
-          console.error('Error in the retrievement of the message')
-          } 
-          return response.json()
-        })
-        .then(data => setMessages(data["messages"]))
-        .catch(error => console.error('Error:', error));
-
-      } catch (err){
-        console.error(err)
+  const fetchMessages = async () => {
+    try {
+      const res = await fetch('/api/message/get');
+      if (!res.ok) {
+        console.error('Error in the retrievement of the message');
+      } else {
+        const data = await res.json();
+        setMessages(data.messages);
       }
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
-  })
+  useEffect(() => {
+    fetchMessages();
+  });
 
   return(
 
