@@ -1,13 +1,15 @@
 import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import 'dotenv/config';
+import dotenv from 'dotenv/config';
 import messageRouter from './routes/message.route.js';
 import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
 
+
 const app = express();
 const PORT = process.env.PORT || 3000;
+dotenv.config()
 
 app.use(cookieParser());
 app.use(express.json());
