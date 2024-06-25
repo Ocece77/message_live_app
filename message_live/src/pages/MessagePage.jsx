@@ -90,7 +90,7 @@ const MessagePage =()=>{
       <input onChange={handleChange} name='content' id='content' minLength={1} maxLength={40} type="text" className="w-full rounded-b border border-e-0 focus:outline-none focus:ring-sky-600 focus:ring-1  px-4 placeholder:text-neutral-300 text-sky-800" placeholder="Your message..." required />
       </div>
 
-      <input type="submit" value='send' className={`rounded-r bg-sky-600 p-2 ${count === 40 ? "cursor-not-allowed opacity-50" : ""}`} disabled={count === 40  } />
+      <input type="submit" value='send' className={`text-white font-bolders rounded-r bg-sky-600 p-2 ${count === 40 ? "cursor-not-allowed opacity-50" : ""}`} disabled={count === 40  } />
 
       <label className="col-span-full text-xs mt-2 text-red-500" htmlFor="messageInput">You have {count} characters left </label>
     </form>
