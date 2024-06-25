@@ -1,5 +1,4 @@
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { Link } from "react-router-dom";
 
 
@@ -15,7 +14,6 @@ return(
 
     <div className=" font-light text-blue-950 flex  justify-end gap-x-10 ">
       <Link className="hover:text-blue-800 flex justify-center items-center  align-middle gap-x-2" target="_blank" to='https://github.com/Ocece77'>
-      <FontAwesomeIcon icon={faGithub} style={{color: "#103166",}} />
         GitHub</Link>
     </div>
 
