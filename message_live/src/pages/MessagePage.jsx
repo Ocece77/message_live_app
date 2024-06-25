@@ -27,7 +27,7 @@ const MessagePage =()=>{
   const handleSubmit= async (e)=>{
       e.preventDefault();
       try{
-        const res = await fetch('/api/message/post', {
+        const res = await fetch('https://message-live-app.onrender.com/api/message/post', {
           method : 'POST',
           headers : {'Content-Type'  : 'application/json' },
           body : JSON.stringify(formData)
@@ -45,7 +45,7 @@ const MessagePage =()=>{
   useEffect(()=>{
 
       try {
-        fetch('/api/message/get')
+        fetch('https://message-live-app.onrender.com/api/message/get')
         .then(response => {
           if (!response.ok){
           console.error('Error in the retrievement of the message')
