@@ -1,5 +1,3 @@
-import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 
 const MessagePage =()=>{
@@ -92,9 +90,9 @@ const MessagePage =()=>{
       <input onChange={handleChange} name='content' id='content' minLength={1} maxLength={40} type="text" className="w-full rounded-b border border-e-0 focus:outline-none focus:ring-sky-600 focus:ring-1  px-4 placeholder:text-neutral-300 text-sky-800" placeholder="Your message..." required />
       </div>
 
-      <button className={`rounded-r bg-sky-600 p-2 ${count === 40 ? "cursor-not-allowed opacity-50" : ""}`} disabled={count === 40  } >
-        <FontAwesomeIcon icon={faPaperPlane} style={{color: "#fff",}} />
-      </button>
+      <input type="submit" className={`rounded-r bg-sky-600 p-2 ${count === 40 ? "cursor-not-allowed opacity-50" : ""}`} disabled={count === 40  } >
+        send 
+      </input>
       <label className="col-span-full text-xs mt-2 text-red-500" htmlFor="messageInput">You have {count} characters left </label>
     </form>
 
