@@ -10,6 +10,6 @@ export default defineConfig({
     }
   },
   plugins: [react()],
-  base: "https://message-live-2udx2nb55-ocece77s-projects.vercel.app",
+  base: "https://message-live-app.vercel.app",
 
 })
