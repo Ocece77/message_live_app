@@ -6,9 +6,7 @@ export default defineConfig({
   proxy : {
     '/api':{
       target :'https://message-live-app.onrender.com',
-      changeOrigin: true,
       secure: true,      
-      ws: true,
     }
   },
   plugins: [react()],
