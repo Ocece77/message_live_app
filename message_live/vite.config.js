@@ -7,7 +7,7 @@ export default defineConfig({
     '/api':{
       target :'https://message-live-app.onrender.com',
       changeOrigin: true,
-      secure: false,      
+      secure: true,      
       ws: true,
     }
   },
