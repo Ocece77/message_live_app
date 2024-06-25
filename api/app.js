@@ -12,6 +12,7 @@ import helmet from 'helmet';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use(express.static('public'));
 app.use(cookieParser());
 app.use(express.json());
 app.use(cors({
