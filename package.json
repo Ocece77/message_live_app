@@ -5,11 +5,13 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "install-server": "cd api && npm install",
-    "start-server": "cd api && node app.js",
-    "install-client": "cd message_live && npm install",
-    "build-client": "cd message_live && npm run build",
-    "start-client": "cd message_live && npm run start"
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "nodemon api/app.js",  
+    "frontend": "vite",              
+    "build": "npm run build:frontend",
+    "build:frontend": "vite build",  
+    "start": "node api/app.js",       
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",

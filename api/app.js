@@ -14,14 +14,16 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cookieParser());
 app.use(express.json());
-app.use(cors({ origin: "https://message-live-app-client.onrender.com" }));
+app.use(cors({
+  origin: process.env.CLIENT_URL, 
+}));
 app.use(helmet());
 app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
       styleSrc: ["'self'", "'unsafe-inline'"],
-      connectSrc: ["'self'", "https://message-live-app.onrender.com"],
+      connectSrc: ["'self'", process.env.API_URL],
       imgSrc: ["'self'"],
       scriptSrc: ["'self'"]
     },
@@ -29,10 +31,7 @@ app.use(
 );
 
 
-mongoose.connect(process.env.MONGO, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect(process.env.MONGO)
   .then(() => console.log("The database has been connected"))
   .catch((err) => console.log(err));
 

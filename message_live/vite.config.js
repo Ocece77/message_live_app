@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   proxy : {
     '/api':{
-      target :'https://message-live-app.onrender.com',
+      target :'http://http://localhost:3000',
       secure: true,      
     }
   },
