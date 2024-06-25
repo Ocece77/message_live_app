@@ -6,8 +6,6 @@ import messageRouter from './routes/message.route.js';
 import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
 
-dotenv.config();
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
