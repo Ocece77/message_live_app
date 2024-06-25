@@ -7,11 +7,16 @@ import cookieParser from 'cookie-parser';
 
 
 const app = express();
-app.use(express.json())
+const PORT = (process.env.PORT || 3000)
 app.use(cookieParser());
 
-app.use(cors())
-const PORT = (process.env.PORT || 3000)
+const corsOptions = {
+  origin: "https://message-live-app-client.onrender.com", // frontend URI (ReactJS)
+}
+
+app.use(express.json())
+app.use(cors(corsOptions))
+
 
 mongoose.connect(process.env.MONGO)
 .then(()=>console.log("The database as been connected"))
