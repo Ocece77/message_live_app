@@ -5,6 +5,7 @@ import "dotenv/config.js";
 import messageRouter from './routes/message.route.js';
 import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
+import path from 'path';
 
 
 
@@ -12,7 +13,8 @@ import helmet from 'helmet';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(cookieParser());
 app.use(express.json());
 app.use(cors({
