@@ -5,6 +5,9 @@ import dotenv from 'dotenv/config';
 import messageRouter from './routes/message.route.js';
 import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 
 const app = express();
