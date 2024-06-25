@@ -9,7 +9,7 @@ import helmet from 'helmet';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-dotenv.config()
+dotenv.config();
 
 app.use(cookieParser());
 app.use(express.json());
