@@ -94,9 +94,6 @@ const MessagePage =()=>{
 
       <label className="col-span-full text-xs mt-2 text-red-500" htmlFor="messageInput">You have {count} characters left </label>
     </form>
-
-
-
     </div>
 
     </>
