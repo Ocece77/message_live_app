@@ -7,16 +7,14 @@ import babel from '@rollup/plugin-babel';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const babelPlugin = babel({
-  presets: ['@babel/preset-env', '@babel/preset-react'],
-});
+
 export default defineConfig({
   plugins: [react(),
-    {
-      ...babelPlugin,
-      apply: 'build',
-      enforce: 'pre',
-    },
+    babel({
+      presets: ['@babel/preset-env', '@babel/preset-react'],
+      babelHelpers: 'bundled',
+      exclude: 'node_modules/**',
+    }),
   ],
   base: "/message_live/",
   server: {
