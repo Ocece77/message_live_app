@@ -16,7 +16,7 @@ export default defineConfig({
       exclude: 'node_modules/**',
     }),
   ],
-  base: "/message_live/",
+  base: "/",
   server: {
     proxy: {
       '/api': {
