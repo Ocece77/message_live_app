@@ -8,7 +8,7 @@ function App() {
     <>
     <Navbar/>
       <Routes>
-        <Route path="/" element={<MessagePage/>}/>
+        <Route path="/message_live" element={<MessagePage/>}/>
         <Route path="*" element={<Error/>}/> 
       </Routes>
     </>

@@ -1,17 +1,20 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
-import path from "path"
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-// https://vitejs.dev/config/
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 export default defineConfig({
   plugins: [react()],
-  base: "https://message-live-app.vercel.app",
+  base: "/message_live/",
   server: {
     proxy: {
       '/api': {
         target: 'http://localhost:3000',
-        secure: true,
         changeOrigin: true,
+        secure: false,
       },
     },
   },
