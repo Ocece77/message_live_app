@@ -4,16 +4,19 @@
   "description": "",
   "main": "app.js",
   "type": "module",
-  "scripts": {
-    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
-    "backend": "nodemon api/app.js",
-    "frontend": "cd message_live && vite",
-    "build": "npm run build:frontend && npm run build:backend",
-    "build:frontend": "cd message_live && npm run build",
-    "build:backend": "echo 'Build backend here'",
-    "start": "node api/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+
+    "scripts": {
+      "dev": "concurrently \"npm run backend:dev\" \"npm run frontend:dev\"",
+      "backend:dev": "nodemon api/app.js",
+      "frontend:dev": "cd message_live && vite",
+      "build": "npm run build:frontend",
+      "build:frontend": "cd message_live && npm run build",
+      "start": "node api/app.js",
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "deploy:frontend": "gh-pages -d message_live/dist", 
+      "deploy:backend": "render deploy api" 
+    },
+  
   "author": "",
   "license": "ISC",
   "dependencies": {
