@@ -6,7 +6,7 @@
       "use": "@vercel/node"
     },
     {
-      "src": "message_live/**/*",
+      "src": "message_live/dist/**/*",
       "use": "@vercel/static"
     }
   ],
@@ -14,11 +14,11 @@
     { "handle": "filesystem" },
     {
       "src": "/api/(.*)",
-      "dest": "api/$1"
+      "dest": "/api/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "message_live/$1"
+      "dest": "/message_live/dist/$1"
     }
   ]
 }
