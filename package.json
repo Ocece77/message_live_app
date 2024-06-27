@@ -11,7 +11,7 @@
       "frontend:dev": "cd message_live && vite",
       "build": "npm run build:frontend",
       "build:frontend": "cd message_live && npm run build",
-      "start": "node api/app.js",
+      "start": "nodemon api/app.js",
       "test": "echo \"Error: no test specified\" && exit 1",
       "deploy:frontend": "gh-pages -d message_live/dist", 
       "deploy:backend": "render deploy api" 
