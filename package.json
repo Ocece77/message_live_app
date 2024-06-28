@@ -6,8 +6,8 @@
   "type": "module",
 
     "scripts": {
-      "install-server": "npm install",
-      "start-server": "node api/app.js",
+      "install-server": "cd api && npm run install-server",
+      "start-server": "cd api && npm run start-server",
       "start": "nodemon api/app.js",
       "test": "echo \"Error: no test specified\" && exit 1"
     },
