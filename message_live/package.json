@@ -1,16 +1,15 @@
 {
+  "homepage": "https://ocece77.github.io/message_live_app",
   "name": "message_live",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ocece77.github.io/message_live_app",
 
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d dist",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "deploy": "gh-pages -d dist",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {

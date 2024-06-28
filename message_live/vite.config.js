@@ -11,6 +11,17 @@ export default defineConfig({
    build: {
     outDir: 'dist', // Assurez-vous que c'est le bon chemin de sortie
   },
+  base: '/message_live/', 
+  build: {
+    rollupOptions: {
+      onwarn(warning, warn) {
+        if (warning.code === "MODULE_LEVEL_DIRECTIVE") {
+          return;
+        }
+        warn(warning);
+      },
+    },
+  },
   server: {
     proxy: {
       '/api': {
