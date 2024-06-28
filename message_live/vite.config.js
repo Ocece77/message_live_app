@@ -7,7 +7,7 @@ export default defineConfig({
   resolve: {
     extensions: ['.js', '.jsx'] 
   },
-  base: '/message_live/', 
+  base: '/message_live_app/', 
   build: {
     rollupOptions: {
       onwarn(warning, warn) {
