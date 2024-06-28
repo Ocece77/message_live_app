@@ -7,10 +7,6 @@ export default defineConfig({
   resolve: {
     extensions: ['.js', '.jsx'] 
   },
-
-   build: {
-    outDir: 'dist', // Assurez-vous que c'est le bon chemin de sortie
-  },
   base: '/message_live/', 
   build: {
     rollupOptions: {
