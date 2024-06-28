@@ -6,15 +6,8 @@
   "type": "module",
 
     "scripts": {
-      "dev": "concurrently \"npm run backend:dev\" \"npm run frontend:dev\"",
-      "backend:dev": "nodemon api/app.js",
-      "frontend:dev": "cd message_live && vite",
-      "build": "npm run build:frontend",
-      "build:frontend": "cd message_live && npm run build",
       "start": "nodemon api/app.js",
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "deploy:frontend": "gh-pages -d message_live/dist", 
-      "deploy:backend": "render deploy api" 
+      "test": "echo \"Error: no test specified\" && exit 1"
     },
   
   "author": "",
