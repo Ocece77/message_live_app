@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
 import dotenv from 'dotenv';
 
-dotenv.config();
+dotenv.config({ path: '../.env' });
 
 
 export default defineConfig({
@@ -24,9 +24,9 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: "https://message-live-app.onrender.com" ,
-        changeOrigin: true,
-        secure: false,
+        target: process.env.API,
+                changeOrigin: true,
+        secure: true,
       },
     },
   },
