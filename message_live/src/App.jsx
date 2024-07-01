@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar"
 import Error from "./components/Error"
 
 function App() {
+  
   return (
     <>
     <Navbar/>
