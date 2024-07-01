@@ -8,6 +8,8 @@
     "scripts": {
       "install-server": "cd api && npm run install-server",
       "start-server": "cd api && npm run start-server",
+      "install-client" : "cd message_live && npm i",
+      "start-client" : "cd message_live && npm run deploy",
       "start": "nodemon api/app.js",
       "test": "echo \"Error: no test specified\" && exit 1"
     },
