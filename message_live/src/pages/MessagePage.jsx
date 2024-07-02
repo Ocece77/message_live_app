@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 const MessagePage =()=>{
   
-  const apikey = import.meta.env.VITE_API
+  const apikey = process.env.API
 
   var d = new Date()
   var dd = String(d.getDate()).padStart(2, '0');
