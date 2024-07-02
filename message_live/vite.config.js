@@ -27,14 +27,14 @@ export default defineConfig(({ command, mode }) => {
     server: {
       proxy: {
         '/api': {
-          target: env.API,
+          target: env.VITE_API,
           changeOrigin: true,
           secure: true,
         },
       },
     },
     define: {
-      'process.env.API': JSON.stringify(env.API),
+      'process.env.VITE_API': JSON.stringify(env.VITE_API),
     },
   };
 });
