@@ -1,7 +1,7 @@
 
 # Message Live App 📨💬
 
-Welcome to Message Live App! This application allows you to send and receive messages in real-time. Check out the live site ---> 🔗 https://ocece77.github.io/message_live_app/ 
+Welcome to Message Live App! This application allows you to send and receive messages in real-time. Check out the live site ---> 🔗https://message-live-app-1.onrender.com
 
 ## Features
 
