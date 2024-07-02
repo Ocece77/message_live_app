@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 
 const MessagePage =()=>{
   
-
+  const apikey = import.meta.env.VITE_API
 
   var d = new Date()
   var dd = String(d.getDate()).padStart(2, '0');
@@ -33,7 +33,7 @@ const MessagePage =()=>{
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`/api/message/post`, {
+      const res = await fetch(`${apikey}/api/message/post`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -53,7 +53,7 @@ const MessagePage =()=>{
 
   const fetchMessages = async () => {
     try {
-      const res = await fetch(`/api/message/get`);
+      const res = await fetch(`${apikey}/api/message/get`);
       if (!res.ok) {
         console.error('Error in the retrievement of the message');
       } else {
