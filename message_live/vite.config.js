@@ -3,12 +3,23 @@ import react from '@vitejs/plugin-react-swc';
 import dotenv from 'dotenv';
 
 // Charger les variables d'environnement
-dotenv.config();
+dotenv.config({path:"../.env"})
 
-export default defineConfig(({ command, mode }) => {
+export default ({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
 
-  return {
+  return defineConfig({
+    reactStrictMode: false,
+
+    server: {
+      proxy: {
+        '/api': {
+          target: env.API,
+          changeOrigin: true,
+          secure: true,
+        },
+      },
+    },
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx'],
@@ -23,18 +34,11 @@ export default defineConfig(({ command, mode }) => {
           warn(warning);
         },
       },
-    },
-    server: {
-      proxy: {
-        '/api': {
-          target: env.VITE_API,
-          changeOrigin: true,
-          secure: true,
-        },
-      },
-    },
+    },  
+    
     define: {
-      'process.env.VITE_API': JSON.stringify(env.VITE_API),
+      'process.env.API': JSON.stringify(env.API),
     },
-  };
-});
+  });
+};
+

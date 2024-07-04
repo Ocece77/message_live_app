@@ -32,7 +32,7 @@ const MessagePage =()=>{
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`https://message-live-app.onrender.com/api/message/post`, {
+      const res = await fetch(`${process.env.API}/api/message/post`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -52,12 +52,13 @@ const MessagePage =()=>{
 
   const fetchMessages = async () => {
     try {
-      const res = await fetch(`https://message-live-app.onrender.com/api/message/get`);
+      const res = await fetch(`${process.env.API}/api/message/get`);
       if (!res.ok) {
         console.error('Error in the retrievement of the message');
       } else {
         const data = await res.json();
         setMessages(data.messages);
+
       }
     } catch (err) {
       console.error(err);
