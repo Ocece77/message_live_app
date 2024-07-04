@@ -5,15 +5,8 @@ import Error from "./components/Error"
 
 function App() {
   
-  if (process.env.NODE_ENV === 'production' || import.meta.env.MODE === 'production') {
-    if (typeof window.__REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined') {
-      for (let prop in window.__REACT_DEVTOOLS_GLOBAL_HOOK__) {
-        if (Object.prototype.hasOwnProperty.call(window.__REACT_DEVTOOLS_GLOBAL_HOOK__, prop)) {
-          window.__REACT_DEVTOOLS_GLOBAL_HOOK__[prop] = function() {};
-        }
-      }
-    }
-  }
+ console.log('API URL:', process.env.API);
+
   
   return (
     <>
