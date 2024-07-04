@@ -6,11 +6,11 @@ import dotenv from 'dotenv';
 dotenv.config({path:"../.env"})
 
 export default ({ command, mode }) => {
+  
   const env = loadEnv(mode, process.cwd(), '');
-
   return defineConfig({
     reactStrictMode: false,
-
+    envDiv :"message_live_app",
     server: {
       proxy: {
         '/api': {
